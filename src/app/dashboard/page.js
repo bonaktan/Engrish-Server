@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import useDatabase from '../lib/useDatabase'
  
 export const metadata = {
   title: 'Engrish - Dashboard',
@@ -21,13 +22,18 @@ export default function Login() {
     )
 }
 
-function ParticipantOverview() {
+async function ParticipantOverview() {
+    const ResearcherData = await useDatabase("researchers", "bonnybonnybonaktan") // should be outside, mamaya na natamad pa ko :3
+    console.log(ResearcherData)
+    let Respondents = []
+    ResearcherData["respondents_under"].forEach(element => {
+        Respondents.push(element)
+    });
+    console.log(Respondents)
     return (
-        <>
-            <p>Participant 1</p>
-            <p>Participant 2</p>
-            <p>Participant 3</p>
-        </>
+        <div>
+            {Respondents}
+        </div>
     )
 }
 function BacklogOverview() {
