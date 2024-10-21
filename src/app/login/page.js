@@ -1,10 +1,9 @@
-'use client'
-import SiteApi from "@/app/lib/SiteApi"
+import {useActionState} from "react"
 export default function Login() {
     return (
         <>
-            <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
+            <h2>Login - Not Working</h2>
+            <form>
                 <div>
                     <label>Username</label>
                     <input name="username"/>
@@ -18,13 +17,3 @@ export default function Login() {
         </>
     )
 }
-
-function handleSubmit(event) {
-    event.preventDefault()
-    const username = event.target[0].value
-    const password = event.target[1].value
-    
-    const response = SiteApi("/researchers/login", {username, password})
-    // authentication TODO
-}
-
