@@ -1,5 +1,5 @@
-import { BacklogStatus } from "./ui/BacklogStatus"
-import { RespondentStatus } from "./ui/RespondentStatus"
+import { BacklogStatus } from "../ui/BacklogStatus"
+import { RespondentStatus } from "../ui/RespondentStatus"
 export default function MainDashboard() {
     return (
         <div>

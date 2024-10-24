@@ -6,7 +6,7 @@ export async function BacklogStatus() {
     return (
         <div className='test'>
             {backlogs.map(function (backlog, key) {
-                return <p key={key}>{backlog}: Date</p>
+                return <p key={key}>{backlog.name}: {backlog.description}</p>
             })}
         </div>
     )

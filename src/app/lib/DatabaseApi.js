@@ -11,10 +11,11 @@ export async function loginAttempt(info) {
 }
 
 export async function fetchBacklogs() {
-    return ['Backlog1']
+    const res = await client.query('SELECT name, description FROM backlogs WHERE researcherUnder=1')
+    return res.rows
 }
 export async function fetchRespondents() {
-    const res = await client.query('SELECT username FROM respondents')
+    const res = await client.query('SELECT username FROM respondents WHERE researcherUnder=1')
     let retVal = []
     res.rows.forEach((dict) => {
         retVal.push(dict['username'])
